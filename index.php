@@ -7,17 +7,25 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <label for="">quantity</label><br>
-        <input type="text" name="quantity" id="">
-        <input type="submit" value="Total">
+        <label for="">radius:</label><br>
+        <input type="text" name="radius">
+        <input type="submit" value="Calculate">
     </form>
 </body>
 </html>
 <?php
-   $item= "pizza";
-   $price = 5.99;
-   $quantity = $_POST["quantity"];
-   $total = $quantity * $price;
-    echo "You have ordered {$quantity} x {$item}'s";
-    echo"Your total is: \${$total}";
+   $radius = $_POST["radius"];
+   $circumference = null;
+    $area = null;
+    $volume = null;
+
+   $circumference = 2 * pi() * $radius;
+   $area = pi() * pow($radius, 2);
+   $volume = 4/3 * pi() * pow($radius, 3);
+   $area = round($area, 2);
+    $circumference = round($circumference, 2);
+    $volume = round($volume, 2);
+   echo"Circumference = {$circumference}cm <br>";
+   echo"Area = {$area}cm^2 <br>";
+   echo"Volume = {$volume}cm^3 <br>";
 ?>
