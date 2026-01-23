@@ -7,36 +7,25 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="radio" name="credit_card" value="Visa">Visa<br>
-        <input type="radio" name="credit_card" value="Mastercard">Mastercard<br>
-        <input type="radio" name="credit_card" value="AmericanExpress">American Express<br>
-        <input type="submit" name="confirm" value="confirm">
+        username:<br>
+        <input type="text" name="username"><br>
+        age:<br>
+        <input type="text" name="age"><br>
+        email:<br>
+        <input type="text" name="email"><br>
+        <input type="submit" name="login" value="login">
     </form>
 </body>
 </html>
 <?php
-    if(isset($_POST["confirm"])){
-        $credit_card = null;
-        if(isset($_POST["credit_card"])){
-            $credit_card = $_POST["credit_card"];
-            
-        } 
-
-        switch($credit_card){
-            case "Visa":
-                echo"You selected Visa";
-                break;
-            case "Mastercard":
-                echo"You selected Mastercard";
-                break;
-            case "AmericanExpress":
-                echo"You selected American Express";
-                break;  
-            default:
-                echo"Please make a selection";
-        }
-        
-        
+    if(isset($_POST["login"])){
+        $username = filter_input(INPUT_POST, "username", 
+                                FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        echo $username;
+        echo $age;
+        echo $email;
     }
     
 ?>
