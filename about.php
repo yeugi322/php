@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    This is the home page<br>
-    Stuff about your home page can go here<br>
+    This is the about page<br>
+    Stuff about your about page can go here<br>
 </body>
 </html>
 <?php
