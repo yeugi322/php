@@ -15,10 +15,10 @@
     
     class Database {
         public $connection;
+        public $statement;
 
         public function __construct($config){
             
-
             $dsn = 'mysql:' . http_build_query($config, '', ';');
             
             $this->connection = new PDO($dsn, 'root', '',
@@ -27,10 +27,17 @@
             ]);
         }
 
-        public function query($query){
-             $statement = $this->connection->prepare($query);
-             $statement->execute();
+        public function query($query, $params = []){
+             $this->statement = $this->connection->prepare($query);
+             $this->statement->execute($params);
 
-             return $statement;
+             return $this;
+        }
+
+        public function find(){
+            return $this->statement->fetch();
+        }
+        public function findAll(){
+            return $this->statement->fetchAll();
         }
     }
