@@ -40,4 +40,12 @@
         public function findAll(){
             return $this->statement->fetchAll();
         }
+        public function findOrFail(){
+            $result = $this->find();
+
+            if(! $result){
+                abort(Response::NOT_FOUND);
+            } 
+            return $result;
+        }
     }

@@ -12,4 +12,9 @@
         return parse_url($_SERVER['REQUEST_URI'])['path'] === BASE_URL . $value;
     }
 
+    function authorize($condition, $status = Response::FORBIDDEN){
+        if(! $condition){
+            abort($status);
+        }
+    }
 ?>

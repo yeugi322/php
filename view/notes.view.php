@@ -11,6 +11,12 @@
                         </a>    
                     </li>
                 <?php endforeach; ?>
+                <br>
+                <p class="text-m font-medium text-white">
+                    <a href="<?= BASE_URL ?>/notes/create" class="text-blue-500 hover:underline">
+                        Create a new note
+                    </a>
+                </p>
             </div>
         </main>
         </div>

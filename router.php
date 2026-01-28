@@ -1,18 +1,11 @@
 <?php 
+    $routes = require 'routes.php';
 
     $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
     $uri = rtrim($uri, '/');
 
-    $routes = [
-    '/website' => 'controllers/home.php',
-    '/website/index.view.php' => 'controllers/home.php',
-    '/website/home' => 'controllers/home.php',
-    '/website/notes' => 'controllers/notes.php',
-    '/website/note' => 'controllers/note.php',
-    '/website/about' => 'controllers/about.php',
-    '/website/contact' => 'controllers/contact.php',
-    ];
+    
 
     
     function routeToController($uri, $routes){
