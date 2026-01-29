@@ -1,13 +1,11 @@
 <?php
-    require 'Validator.php';
-    $config = require 'config.php';
+    require base_path('Validator.php');
+    $config = require base_path('config.php');
     $db = new Database($config);
-
-    $heading = 'Create a new note';
+    $errors = [];
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $errors = [];
-
+       
         if(! Validator::string($_POST['title'], 1, 1000)){
             $errors['title'] = 'A text is required and text must be less than 1,000 characters!';
         }
@@ -21,4 +19,7 @@
         
     }
 
-require BASE_PATH . '/view/note-create.view.php'; 
+require view('notes/create.view.php', [
+        'heading' => 'Create a new note',
+        'errors' => $errors
+    ]) ; 

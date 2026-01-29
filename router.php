@@ -1,16 +1,19 @@
 <?php 
     $routes = require 'routes.php';
 
-    $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+    $uri = str_replace('/website/public', '', $uri);
     $uri = rtrim($uri, '/');
 
-    
+    if ($uri === '') {
+        $uri = '/';
+    }
 
     
     function routeToController($uri, $routes){
         if (array_key_exists($uri, $routes)) {
-            require BASE_PATH . '/' . $routes[$uri];
+            require BASE_PATH . $routes[$uri];
             } else {
                 abort();
         }

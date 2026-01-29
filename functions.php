@@ -8,13 +8,36 @@
         die();
     }
 
-    function urlIs($value){
-        return parse_url($_SERVER['REQUEST_URI'])['path'] === BASE_URL . $value;
+    function urlIs($path)
+    {
+        $current = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        // strip /website/public if needed (XAMPP subfolder)
+        $current = str_replace('/website/public', '', $current);
+
+        if ($current === '') {
+            $current = '/';
+        }
+
+        return $current === $path;
     }
 
     function authorize($condition, $status = Response::FORBIDDEN){
         if(! $condition){
             abort($status);
         }
+    }
+
+    function base_path($path){
+        return BASE_PATH . $path;
+    }
+
+    function view($path, $attributes = []){
+        extract($attributes);
+        return base_path('view/' . $path);
+    }
+
+    function url($path = '') {
+        return '/website/public' . $path;
     }
 ?>

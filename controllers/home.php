@@ -1,6 +1,6 @@
 <?php
-    
-    $heading = "Home";
-    require BASE_PATH . '/view/home.view.php'; 
-    
+   
+    require view('home.view.php', [
+        'heading' => "Home"
+    ]) ; 
 ?>

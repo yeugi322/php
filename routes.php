@@ -1,12 +1,14 @@
 <?php
+    
 
 return [
-    '/website' => 'controllers/home.php',
-    '/website/index.view.php' => 'controllers/home.php',
-    '/website/home' => 'controllers/home.php',
-    '/website/notes' => 'controllers/notes.php',
-    '/website/note' => 'controllers/note.php',
-    '/website/notes/create' => 'controllers/note-create.php',
-    '/website/about' => 'controllers/about.php',
-    '/website/contact' => 'controllers/contact.php',
-    ];
+    '/' => 'controllers/home.php',
+    '/home' => 'controllers/home.php',
+
+    '/notes' => 'controllers/notes/index.php',
+    '/notes/create' => 'controllers/notes/create.php',
+    '/note' => 'controllers/notes/show.php',
+
+    '/about' => 'controllers/about.php',
+    '/contact' => 'controllers/contact.php',
+];

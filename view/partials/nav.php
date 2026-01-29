@@ -8,10 +8,10 @@
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <a href="<?= BASE_URL ?>/home" class="<?= urlIs('/home') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Home</a>
-                 <a href="<?= BASE_URL ?>/notes" class="<?= urlIs('/notes') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Notes</a>
-                <a href="<?= BASE_URL ?>/about" class="<?= urlIs('/about') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">About</a>
-                <a href="<?= BASE_URL ?>/contact" class="<?= urlIs('/contact') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Contact</a>
+                <a href="<?= url('/home') ?>" class="<?= urlIs('/home') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Home</a>
+                 <a href="<?= url('/notes') ?>" class="<?= urlIs('/notes') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Notes</a>
+                <a href="<?= url('/about') ?>" class="<?= urlIs('/about') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">About</a>
+                <a href="<?= url('/contact') ?>" class="<?= urlIs('/contact') ?'bg-gray-950/50 text-white' : 'text-gray-300 '?> hover:bg-white/5 hover:text-white">Contact</a>
                 
                 </div>
             </div>
