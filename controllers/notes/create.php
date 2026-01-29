@@ -19,7 +19,7 @@
         
     }
 
-require view('notes/create.view.php', [
+ view('notes/create.view.php', [
         'heading' => 'Create a new note',
         'errors' => $errors
     ]) ; 

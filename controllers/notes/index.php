@@ -5,7 +5,7 @@
     $notes = $db->query("select * from posts")->findAll();
 
 
-    require view('notes/index.view.php', [
+     view('notes/index.view.php', [
         'heading' => 'My Notes',
         'notes' => $notes
     ]) ; 

@@ -1,6 +1,6 @@
 <?php
    
-    require view('home.view.php', [
+     view('home.view.php', [
         'heading' => "Home"
     ]) ; 
 ?>
