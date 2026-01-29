@@ -8,9 +8,7 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $errors = [];
 
-        $validator = new Validator();
-
-        if(! $validator->string($_POST['title'], 1, 1000)){
+        if(! Validator::string($_POST['title'], 1, 1000)){
             $errors['title'] = 'A text is required and text must be less than 1,000 characters!';
         }
 
