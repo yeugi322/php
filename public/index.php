@@ -3,9 +3,12 @@
     
     
     require BASE_PATH . 'functions.php';
-    require BASE_PATH . 'database.php';
-    require BASE_PATH . 'Response.php';
-    require BASE_PATH . 'router.php';
+    
+    spl_autoload_register(function ($class) {
+        require base_path("Core/{$class}.php");
+    });
+
+    require base_path('Core/router.php');
     
    
 
