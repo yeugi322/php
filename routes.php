@@ -1,14 +1,13 @@
 <?php
     
+$router->get('/', 'controllers/home.php');
+$router->get('/home', 'controllers/home.php');
+$router->get('/about', 'controllers/about.php');
+$router->get('/contact', 'controllers/contact.php');
 
-return [
-    '/' => 'controllers/home.php',
-    '/home' => 'controllers/home.php',
+$router->get('/notes', 'controllers/notes/index.php');
+$router->get('/note', 'controllers/notes/show.php');
+$router->get('/notes/create', 'controllers/notes/create.php');
 
-    '/notes' => 'controllers/notes/index.php',
-    '/notes/create' => 'controllers/notes/create.php',
-    '/note' => 'controllers/notes/show.php',
-
-    '/about' => 'controllers/about.php',
-    '/contact' => 'controllers/contact.php',
-];
+$router->delete('/note', 'controller/notes/destroy.php');
+// dd($router->routes);
