@@ -9,6 +9,8 @@
         require base_path("{$class}.php");
     });
 
+    require base_path('bootstrap.php');
+
    $router = new \Core\Router();
     
    $routes = require base_path('routes.php');
