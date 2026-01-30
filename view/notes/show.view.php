@@ -4,8 +4,13 @@
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <p class="text-sm font-medium text-white">
-                    <?= $note['title'] ?> 
-                </p>                 
+                    <?= htmlspecialchars($note['title']) ?> 
+                </p>              
+                
+                <form class="mt-6" method="post">
+                    <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                    <button class="text-sm text-red-100">delete</button>
+                </form>
             </div>
         </main>
         </div>
