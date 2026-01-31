@@ -1,5 +1,4 @@
 <?php
-
 use Core\App;
 use Core\Database;
 
@@ -10,9 +9,8 @@ $currentUserId = 1;
 $note = $db->query('select * from posts where id = :id', ['id' => $_GET['id']])->findOrFail();
 
 authorize($note['user_id'] === $currentUserId);
-
-
-view('notes/show.view.php', [
-    'heading' => 'My Note',
+view('notes/edit.view.php', [
+    'heading' => 'Edit  note',
+    'errors' => [],
     'note' => $note
 ]);
