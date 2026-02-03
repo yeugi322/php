@@ -27,7 +27,7 @@ if(! empty($errors)) {
 $db = App::resolve(Database::class);
 
 $user = $db->query('select * from users where email = :email', [
-    'email' = $email
+    'email' => $email
 ])->find();
 
 if($user) {
@@ -35,12 +35,12 @@ if($user) {
     exit();
 } else {
     $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
-        'email' => $email;
+        'email' => $email,
         'password' => $password
     ]);
 
     $_SESSION['user'] = [
-        'email' = $email
+        'email' => $email
     ];
 
     header('location: /');
