@@ -49,4 +49,10 @@
     function url($path = '') {
         return '/website/public' . $path;
     }
+
+    function login($user){
+        $_SESSION['user'] = [
+            'email' => $user['email']
+        ];
+    }
 ?>
